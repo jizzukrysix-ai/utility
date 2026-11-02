@@ -12,7 +12,7 @@
   }catch(e){console.warn("AdsGram:",e);say("Ads unavailable. All tools remain usable.");}
  }
  rb.addEventListener("click",async()=>{
-  if(!rewarded){say("Set ADSGRAM_REWARDED_BLOCK_ID in server environment.");return;}
+  if(!rewarded){say("Set 57640 in server environment.");return;}
   rb.disabled=true;say("Loading optional ad…");
   try{const result=await rewarded.show();say(result&&result.done?"Ad completed. Thank you.":"Ad ended without completion.");}
   catch(e){console.info("Rewarded ad skipped/unavailable:",e);say("No ad completed. You can keep using every tool.");}
