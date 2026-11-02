@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="Smart Utility Desk — practical everyday tools in one clean workspace.">
+  <title>Smart Utility Desk</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+  <script src="js/telegram.js" defer></script>
+  <script src="js/text-tools.js" defer></script>
+  <script src="js/converter.js" defer></script>
+  <script src="js/notes.js" defer></script>
+  <script src="js/timer.js" defer></script>
+  <script src="js/qr-generator.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Smart Utility Desk home">
+        <span class="brand-mark">S</span><span><strong>Smart Utility</strong><small>DESK</small></span>
+      </a>
+      <div class="sidebar-label">WORKSPACE</div>
+      <nav class="nav-list" aria-label="Main navigation">
+        <button class="nav-item active" data-view="overview"><span class="nav-icon">⌂</span> Overview</button>
+        <button class="nav-item" data-view="text"><span class="nav-icon">T</span> Text tools</button>
+        <button class="nav-item" data-view="converter"><span class="nav-icon">⇄</span> Unit converter</button>
+        <button class="nav-item" data-view="notes"><span class="nav-icon">▤</span> Quick notes</button>
+        <button class="nav-item" data-view="timer"><span class="nav-icon">◷</span> Timer & stopwatch</button>
+        <button class="nav-item" data-view="qr"><span class="nav-icon">▦</span> QR generator</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="privacy-card"><span class="privacy-icon">✦</span><strong>Your tools, your space</strong><p>Your notes stay in this browser on this device.</p></div>
+        <a class="side-link" href="privacy.html">Privacy & data</a>
+        <span class="version">VERSION 1.0.0</span>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="mobile-brand"><span class="brand-mark">S</span><strong>Smart Utility Desk</strong></div>
+        <div class="breadcrumb"><span>Workspace</span><span class="crumb-slash">/</span><strong id="page-breadcrumb">Overview</strong></div>
+        <div class="top-actions"><span class="local-badge"><i></i> All systems ready</span><button class="avatar" id="profile-button" aria-label="Profile">U</button></div>
+      </header>
+
+      <section class="view active" id="view-overview">
+        <div class="welcome-row">
+          <div><p class="eyebrow">YOUR EVERYDAY WORKSPACE</p><h1>Make room for <span>what matters.</span></h1><p class="subheading">A focused collection of simple tools to help you get everyday tasks done.</p></div>
+          <div class="date-card"><span class="date-icon">✧</span><span id="today-date">YOUR DAY</span><strong id="today-day">Welcome</strong></div>
+        </div>
+        <div class="stats-grid">
+          <article class="stat-card"><span class="stat-symbol purple">▤</span><div><small>Saved notes</small><strong id="note-count">0</strong></div><span class="stat-foot">On this device</span></article>
+          <article class="stat-card"><span class="stat-symbol blue">⌁</span><div><small>Text workspace</small><strong>Ready</strong></div><span class="stat-foot">Analyze & transform</span></article>
+          <article class="stat-card"><span class="stat-symbol green">◷</span><div><small>Focus tools</small><strong>2 tools</strong></div><span class="stat-foot">Timer & stopwatch</span></article>
+        </div>
+        <div class="section-heading"><div><p class="eyebrow">EXPLORE YOUR WORKSPACE</p><h2>Tools for your day</h2></div><span class="muted">6 practical tools</span></div>
+        <div class="tool-grid">
+          <button class="tool-card" data-open="text"><span class="tool-emoji bg-violet">T</span><span class="tool-card-title">Text analyzer</span><span class="tool-card-desc">Understand words, characters and reading time.</span><span class="tool-arrow">↗</span></button>
+          <button class="tool-card" data-open="text"><span class="tool-emoji bg-blue">Aa</span><span class="tool-card-title">Text converter</span><span class="tool-card-desc">Change case and clean up text in seconds.</span><span class="tool-arrow">↗</span></button>
+          <button class="tool-card" data-open="converter"><span class="tool-emoji bg-cyan">⇄</span><span class="tool-card-title">Unit converter</span><span class="tool-card-desc">Convert length, weight and temperature.</span><span class="tool-arrow">↗</span></button>
+          <button class="tool-card" data-open="notes"><span class="tool-emoji bg-amber">▤</span><span class="tool-card-title">Quick notes</span><span class="tool-card-desc">Capture ideas and keep them on this device.</span><span class="tool-arrow">↗</span></button>
+          <button class="tool-card" data-open="timer"><span class="tool-emoji bg-green">◷</span><span class="tool-card-title">Timer & stopwatch</span><span class="tool-card-desc">Keep track of time with a simple focus timer.</span><span class="tool-arrow">↗</span></button>
+          <button class="tool-card" data-open="qr"><span class="tool-emoji bg-pink">▦</span><span class="tool-card-title">QR generator</span><span class="tool-card-desc">Create a QR code from text or a web address.</span><span class="tool-arrow">↗</span></button>
+        </div>
+        <div class="bottom-note"><span>✦</span><p><strong>A little more clarity, every day.</strong> Your tools work without requiring you to watch an advertisement.</p></div>
+      </section>
+
+      <section class="view" id="view-text">
+        <div class="page-intro"><p class="eyebrow">WRITE WITH CLARITY</p><h1>Text workspace</h1><p class="subheading">Analyze your writing, transform text and copy the result.</p></div>
+        <div class="workspace-card">
+          <div class="card-head"><div><h2>Text editor</h2><p>Enter or paste your text below.</p></div><button class="text-button" id="clear-text">Clear text</button></div>
+          <textarea id="text-input" class="text-area" placeholder="Start typing or paste your text here..." rows="9"></textarea>
+          <div class="metrics-row"><div><strong id="word-count">0</strong><span>Words</span></div><div><strong id="char-count">0</strong><span>Characters</span></div><div><strong id="sentence-count">0</strong><span>Sentences</span></div><div><strong id="reading-time">0 min</strong><span>Reading time</span></div></div>
+          <div class="divider"></div>
+          <div class="card-head compact"><div><h3>Transform text</h3><p>Choose an action to update your text.</p></div></div>
+          <div class="action-grid">
+            <button class="action-button" data-transform="upper">UPPERCASE</button><button class="action-button" data-transform="lower">lowercase</button><button class="action-button" data-transform="title">Title Case</button><button class="action-button" data-transform="sentence">Sentence case</button><button class="action-button" data-transform="trim">Remove extra spaces</button><button class="action-button" data-transform="reverse">Reverse text</button>
+          </div>
+          <div class="button-row"><button class="btn btn-primary" id="copy-text">Copy text <span>↗</span></button><span class="inline-feedback" id="text-feedback" aria-live="polite"></span></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-converter">
+        <div class="page-intro"><p class="eyebrow">QUICK & ACCURATE</p><h1>Unit converter</h1><p class="subheading">Convert common measurements with clear, instant results.</p></div>
+        <div class="workspace-card converter-card">
+          <div class="field-label">Measurement type</div>
+          <div class="segmented" id="unit-category"><button class="selected" data-category="length">Length</button><button data-category="weight">Weight</button><button data-category="temperature">Temperature</button></div>
+          <div class="conversion-grid">
+            <label class="input-group"><span>From</span><input id="unit-value" type="number" value="1" step="any"><select id="unit-from" aria-label="Convert from"></select></label>
+            <div class="swap-mark">⇄</div>
+            <label class="input-group"><span>To</span><div class="result-box" id="unit-result">0.3048</div><select id="unit-to" aria-label="Convert to"></select></label>
+          </div>
+          <div class="result-summary"><span>Converted result</span><strong id="unit-result-full">0.3048 meters</strong><button id="copy-conversion" class="text-button">Copy result</button></div>
+          <p class="helper-text">Results are calculated locally in your browser. Small rounding differences may occur for displayed values.</p>
+        </div>
+      </section>
+
+      <section class="view" id="view-notes">
+        <div class="page-intro"><p class="eyebrow">SAVE A THOUGHT</p><h1>Quick notes</h1><p class="subheading">A simple place to capture ideas. Notes are saved in this browser.</p></div>
+        <div class="notes-layout">
+          <div class="workspace-card note-editor">
+            <div class="card-head"><div><h2 id="note-editor-heading">New note</h2><p>Only you can access notes stored in this browser profile.</p></div></div>
+            <input id="note-title" class="title-input" maxlength="80" placeholder="Give your note a title">
+            <textarea id="note-body" class="text-area note-area" maxlength="5000" placeholder="Write something worth remembering..." rows="8"></textarea>
+            <div class="button-row"><button class="btn btn-primary" id="save-note">Save note</button><button class="btn btn-quiet" id="new-note">New</button><span class="inline-feedback" id="note-feedback" aria-live="polite"></span></div>
+          </div>
+          <div class="notes-list-panel"><div class="list-heading"><h3>Your notes</h3><span id="notes-list-count">0 notes</span></div><div id="notes-list" class="notes-list"><div class="empty-state"><span>▤</span><strong>No notes yet</strong><p>Your saved notes will appear here.</p></div></div></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-timer">
+        <div class="page-intro"><p class="eyebrow">MAKE TIME COUNT</p><h1>Timer & stopwatch</h1><p class="subheading">Set a countdown or measure elapsed time.</p></div>
+        <div class="time-tools-grid">
+          <div class="workspace-card time-card"><div class="card-head"><div><h2>Countdown timer</h2><p>Choose a duration for your next task.</p></div><span class="time-icon">◷</span></div>
+            <div class="timer-inputs"><label><span>Minutes</span><input type="number" id="timer-minutes" min="0" max="999" value="5"></label><label><span>Seconds</span><input type="number" id="timer-seconds" min="0" max="59" value="0"></label></div>
+            <div class="timer-display" id="timer-display">05:00</div><div class="timer-controls"><button class="btn btn-primary" id="timer-start">Start timer</button><button class="btn btn-quiet" id="timer-reset">Reset</button></div><p class="inline-feedback centered" id="timer-feedback" aria-live="polite"></p>
+          </div>
+          <div class="workspace-card time-card"><div class="card-head"><div><h2>Stopwatch</h2><p>Track time as it passes.</p></div><span class="time-icon blue-icon">◴</span></div>
+            <div class="timer-display stopwatch-display" id="stopwatch-display">00:00.0</div><div class="timer-controls"><button class="btn btn-primary" id="stopwatch-start">Start</button><button class="btn btn-quiet" id="stopwatch-lap">Lap</button><button class="btn btn-quiet" id="stopwatch-reset">Reset</button></div><div class="laps-list" id="laps-list"><span class="muted">Lap times will appear here.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-qr">
+        <div class="page-intro"><p class="eyebrow">SHARE SOMETHING SIMPLY</p><h1>QR generator</h1><p class="subheading">Turn a short message or web address into a scannable QR code.</p></div>
+        <div class="qr-layout">
+          <div class="workspace-card"><div class="card-head"><div><h2>Your QR content</h2><p>Enter text or a URL to generate a code.</p></div></div><label class="field-label" for="qr-input">Text or URL</label><textarea id="qr-input" class="text-area qr-input" rows="5" maxlength="1500" placeholder="https://example.com"></textarea><div class="qr-options"><label><span>Size</span><select id="qr-size"><option value="180">Small</option><option value="240" selected>Medium</option><option value="300">Large</option></select></label></div><div class="button-row"><button class="btn btn-primary" id="generate-qr">Generate QR code</button><button class="btn btn-quiet" id="clear-qr">Clear</button></div><p class="helper-text">Avoid entering passwords, private keys or other sensitive information.</p></div>
+          <div class="workspace-card qr-preview-card"><div class="card-head"><div><h2>Preview</h2><p>Your QR code will appear here.</p></div></div><div class="qr-preview" id="qr-output"><div class="qr-placeholder"><span>▦</span><strong>Your code goes here</strong><small>Enter content and select Generate.</small></div></div><button class="btn btn-secondary full-width" id="download-qr" disabled>Download PNG</button><p class="inline-feedback centered" id="qr-feedback" aria-live="polite"></p></div>
+        </div>
+      </section>
+
+      <footer class="app-footer"><span>SMART UTILITY DESK</span><span>Useful tools. Clear workspace.</span><a href="privacy.html">Privacy</a></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
