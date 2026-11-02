@@ -13,8 +13,10 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="https://sad.adsgram.ai/js/sad.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
   <script src="js/telegram.js" defer></script>
+  <script src="js/adsgram.js" defer></script>
   <script src="js/text-tools.js" defer></script>
   <script src="js/converter.js" defer></script>
   <script src="js/notes.js" defer></script>
@@ -70,7 +72,7 @@
           <button class="tool-card" data-open="timer"><span class="tool-emoji bg-green">◷</span><span class="tool-card-title">Timer & stopwatch</span><span class="tool-card-desc">Keep track of time with a simple focus timer.</span><span class="tool-arrow">↗</span></button>
           <button class="tool-card" data-open="qr"><span class="tool-emoji bg-pink">▦</span><span class="tool-card-title">QR generator</span><span class="tool-card-desc">Create a QR code from text or a web address.</span><span class="tool-arrow">↗</span></button>
         </div>
-        <div class="bottom-note"><span>✦</span><p><strong>A little more clarity, every day.</strong> Your tools work without requiring you to watch an advertisement.</p></div>
+        <section class="ad-integration-card"><div class="ad-integration-copy"><p class="eyebrow">OPTIONAL SUPPORT</p><h2>Support this free workspace</h2><p>Ads are optional. Your utility tools remain available if you choose not to view an ad.</p></div><div class="ad-actions"><button class="btn btn-secondary" id="show-rewarded-ad" type="button">Watch optional rewarded ad</button><button class="text-button" id="show-interstitial-ad" type="button">Show optional interstitial</button><span class="inline-feedback" id="ads-feedback" role="status" aria-live="polite"></span></div></section><div class="bottom-note"><span>✦</span><p><strong>A little more clarity, every day.</strong> Your tools work without requiring you to watch an advertisement.</p></div>
       </section>
 
       <section class="view" id="view-text">
